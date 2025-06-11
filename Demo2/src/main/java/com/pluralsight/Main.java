@@ -6,10 +6,21 @@ import javax.sql.DataSource;
 
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
+
+        if (args.length != 2) {
+            System.out.println(
+                    "Application needs two arguments to run: " +
+                            "java com.pluralsight.Main <username> <password>");
+            System.exit(1);
+        }
+        // get the user name and password from the command line args
+        String username = args[0];
+        String password = args[1];
+
+
         System.out.println("Hello, World!");
         String connectionString = "jdbc:mysql://localhost:3306/sakila";
-        String username = "user_1";
-        String password = "password1234";
+
 
         // load the MySQL Driver
         Class.forName("com.mysql.cj.jdbc.Driver");
