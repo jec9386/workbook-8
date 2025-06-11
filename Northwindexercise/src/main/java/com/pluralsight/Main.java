@@ -20,7 +20,7 @@ public class Main {
 
 
         PreparedStatement preparedStatement = connection.prepareStatement(
-               "Select ProductId, ProductName, UnitPrice, UnitsInStock FROM products"
+                "Select ProductId, ProductName, UnitPrice, UnitsInStock FROM products"
         );
 
         ResultSet results = preparedStatement.executeQuery();//execute, send query to database, and get back  ResultSet- results/table you can go through
